@@ -7,18 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C6065762C60F45500086FF0 /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6065752C60F45500086FF0 /* Participant.swift */; };
+		4C6065792C60F88800086FF0 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6065782C60F88800086FF0 /* ConfirmationView.swift */; };
+		4C60657C2C622F7D00086FF0 /* ConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C60657B2C622F7C00086FF0 /* ConfirmationViewModel.swift */; };
 		4C63F5982BFF3AA100639819 /* SilaSilaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C63F5972BFF3AA100639819 /* SilaSilaApp.swift */; };
 		4C63F59A2BFF3AA100639819 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C63F5992BFF3AA100639819 /* ContentView.swift */; };
 		4C63F59C2BFF3AA900639819 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C63F59B2BFF3AA900639819 /* Assets.xcassets */; };
 		4C63F59F2BFF3AA900639819 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C63F59E2BFF3AA900639819 /* Preview Assets.xcassets */; };
+		4C63F5A62BFF3D5F00639819 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C63F5A52BFF3D5F00639819 /* WelcomeScreen.swift */; };
+		4C7097582C0F0D6500CABD42 /* StoriesCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7097572C0F0D6500CABD42 /* StoriesCellView.swift */; };
+		4C70975C2C0F2D1000CABD42 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C70975B2C0F2D1000CABD42 /* TabBarView.swift */; };
+		4C70975E2C0F312900CABD42 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C70975D2C0F312900CABD42 /* MainScreen.swift */; };
+		4C7097602C0F828900CABD42 /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C70975F2C0F828900CABD42 /* BookingView.swift */; };
+		4C7B96972C57D457005C400B /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B96962C57D457005C400B /* StoryView.swift */; };
+		4C7B96992C57DDA4005C400B /* StoryStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B96982C57DDA4005C400B /* StoryStruct.swift */; };
+		4C7B969B2C57E050005C400B /* StoriesAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B969A2C57E050005C400B /* StoriesAllView.swift */; };
+		4C7B969D2C57E078005C400B /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B969C2C57E078005C400B /* CloseButton.swift */; };
+		4C7B969F2C57E0A6005C400B /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B969E2C57E0A6005C400B /* ProgressBar.swift */; };
+		4C7B96A12C57E0C5005C400B /* MaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B96A02C57E0C5005C400B /* MaskView.swift */; };
+		4C7B96A32C57E0EB005C400B /* MaskFragmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B96A22C57E0EB005C400B /* MaskFragmentView.swift */; };
+		4C7B96A52C57E10A005C400B /* ConfigurationTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B96A42C57E10A005C400B /* ConfigurationTimer.swift */; };
+		4C7B96AB2C5AB2A1005C400B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B96AA2C5AB2A1005C400B /* ProfileView.swift */; };
+		4C7B96AD2C5B9A24005C400B /* DateSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B96AC2C5B9A24005C400B /* DateSelectionView.swift */; };
+		4C7B96AF2C5B9A81005C400B /* ParticipantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B96AE2C5B9A81005C400B /* ParticipantsView.swift */; };
+		4C7B96B12C5BCB7D005C400B /* BookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B96B02C5BCB7C005C400B /* BookingViewModel.swift */; };
+		4C7B96B32C5BCD26005C400B /* PickerSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B96B22C5BCD26005C400B /* PickerSection.swift */; };
+		4CDF02D12C5EB83A005C431E /* ParticipantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF02D02C5EB83A005C431E /* ParticipantsViewModel.swift */; };
+		4CDF02D32C60EF28005C431E /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF02D22C60EF28005C431E /* TextFieldView.swift */; };
+		4CDF02D52C60EFF9005C431E /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF02D42C60EFF9005C431E /* DatePickerView.swift */; };
+		4CDF02D72C60F09B005C431E /* ParticipantStructView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF02D62C60F09B005C431E /* ParticipantStructView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C6065752C60F45500086FF0 /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
+		4C6065782C60F88800086FF0 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
+		4C60657B2C622F7C00086FF0 /* ConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewModel.swift; sourceTree = "<group>"; };
 		4C63F5942BFF3AA100639819 /* SilaSila.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilaSila.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C63F5972BFF3AA100639819 /* SilaSilaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilaSilaApp.swift; sourceTree = "<group>"; };
 		4C63F5992BFF3AA100639819 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4C63F59B2BFF3AA900639819 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C63F59E2BFF3AA900639819 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4C63F5A52BFF3D5F00639819 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
+		4C7097572C0F0D6500CABD42 /* StoriesCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCellView.swift; sourceTree = "<group>"; };
+		4C70975B2C0F2D1000CABD42 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		4C70975D2C0F312900CABD42 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		4C70975F2C0F828900CABD42 /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
+		4C7B96962C57D457005C400B /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
+		4C7B96982C57DDA4005C400B /* StoryStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryStruct.swift; sourceTree = "<group>"; };
+		4C7B969A2C57E050005C400B /* StoriesAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesAllView.swift; sourceTree = "<group>"; };
+		4C7B969C2C57E078005C400B /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		4C7B969E2C57E0A6005C400B /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		4C7B96A02C57E0C5005C400B /* MaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskView.swift; sourceTree = "<group>"; };
+		4C7B96A22C57E0EB005C400B /* MaskFragmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskFragmentView.swift; sourceTree = "<group>"; };
+		4C7B96A42C57E10A005C400B /* ConfigurationTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTimer.swift; sourceTree = "<group>"; };
+		4C7B96AA2C5AB2A1005C400B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4C7B96AC2C5B9A24005C400B /* DateSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionView.swift; sourceTree = "<group>"; };
+		4C7B96AE2C5B9A81005C400B /* ParticipantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsView.swift; sourceTree = "<group>"; };
+		4C7B96B02C5BCB7C005C400B /* BookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewModel.swift; sourceTree = "<group>"; };
+		4C7B96B22C5BCD26005C400B /* PickerSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSection.swift; sourceTree = "<group>"; };
+		4CDF02D02C5EB83A005C431E /* ParticipantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsViewModel.swift; sourceTree = "<group>"; };
+		4CDF02D22C60EF28005C431E /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		4CDF02D42C60EFF9005C431E /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		4CDF02D62C60F09B005C431E /* ParticipantStructView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantStructView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +82,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C6065772C60F6A600086FF0 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				4CDF02D42C60EFF9005C431E /* DatePickerView.swift */,
+			);
+			path = DatePicker;
+			sourceTree = "<group>";
+		};
+		4C60657A2C61088E00086FF0 /* ConfirmationView */ = {
+			isa = PBXGroup;
+			children = (
+				4C6065782C60F88800086FF0 /* ConfirmationView.swift */,
+				4C60657B2C622F7C00086FF0 /* ConfirmationViewModel.swift */,
+			);
+			path = ConfirmationView;
+			sourceTree = "<group>";
+		};
 		4C63F58B2BFF3AA100639819 = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +120,17 @@
 			children = (
 				4C63F5972BFF3AA100639819 /* SilaSilaApp.swift */,
 				4C63F5992BFF3AA100639819 /* ContentView.swift */,
+				4C70975B2C0F2D1000CABD42 /* TabBarView.swift */,
+				4C7B96AA2C5AB2A1005C400B /* ProfileView.swift */,
+				4C70975D2C0F312900CABD42 /* MainScreen.swift */,
+				4C7B96B42C5E9CFD005C400B /* BookingView */,
+				4CDF02D82C60F0D8005C431E /* ParticipantsView */,
+				4C6065772C60F6A600086FF0 /* DatePicker */,
+				4C63F5A52BFF3D5F00639819 /* WelcomeScreen.swift */,
+				4C7B96B22C5BCD26005C400B /* PickerSection.swift */,
+				4C60657A2C61088E00086FF0 /* ConfirmationView */,
+				4C7B96A72C57E4F6005C400B /* Stories */,
+				4C7B96A62C57E4CD005C400B /* ProgressBar&Timer */,
 				4C63F59B2BFF3AA900639819 /* Assets.xcassets */,
 				4C63F59D2BFF3AA900639819 /* Preview Content */,
 			);
@@ -65,6 +143,51 @@
 				4C63F59E2BFF3AA900639819 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4C7B96A62C57E4CD005C400B /* ProgressBar&Timer */ = {
+			isa = PBXGroup;
+			children = (
+				4C7B96A02C57E0C5005C400B /* MaskView.swift */,
+				4C7B96A22C57E0EB005C400B /* MaskFragmentView.swift */,
+				4C7B96A42C57E10A005C400B /* ConfigurationTimer.swift */,
+				4C7B969E2C57E0A6005C400B /* ProgressBar.swift */,
+			);
+			path = "ProgressBar&Timer";
+			sourceTree = "<group>";
+		};
+		4C7B96A72C57E4F6005C400B /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				4C7B96982C57DDA4005C400B /* StoryStruct.swift */,
+				4C7B96962C57D457005C400B /* StoryView.swift */,
+				4C7097572C0F0D6500CABD42 /* StoriesCellView.swift */,
+				4C7B969A2C57E050005C400B /* StoriesAllView.swift */,
+				4C7B969C2C57E078005C400B /* CloseButton.swift */,
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
+		4C7B96B42C5E9CFD005C400B /* BookingView */ = {
+			isa = PBXGroup;
+			children = (
+				4C70975F2C0F828900CABD42 /* BookingView.swift */,
+				4C7B96B02C5BCB7C005C400B /* BookingViewModel.swift */,
+				4C7B96AC2C5B9A24005C400B /* DateSelectionView.swift */,
+			);
+			path = BookingView;
+			sourceTree = "<group>";
+		};
+		4CDF02D82C60F0D8005C431E /* ParticipantsView */ = {
+			isa = PBXGroup;
+			children = (
+				4C7B96AE2C5B9A81005C400B /* ParticipantsView.swift */,
+				4CDF02D02C5EB83A005C431E /* ParticipantsViewModel.swift */,
+				4CDF02D62C60F09B005C431E /* ParticipantStructView.swift */,
+				4C6065752C60F45500086FF0 /* Participant.swift */,
+				4CDF02D22C60EF28005C431E /* TextFieldView.swift */,
+			);
+			path = ParticipantsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +260,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C7B969B2C57E050005C400B /* StoriesAllView.swift in Sources */,
+				4C6065792C60F88800086FF0 /* ConfirmationView.swift in Sources */,
+				4CDF02D52C60EFF9005C431E /* DatePickerView.swift in Sources */,
+				4C70975E2C0F312900CABD42 /* MainScreen.swift in Sources */,
+				4C7B96A32C57E0EB005C400B /* MaskFragmentView.swift in Sources */,
+				4C7097582C0F0D6500CABD42 /* StoriesCellView.swift in Sources */,
+				4C7097602C0F828900CABD42 /* BookingView.swift in Sources */,
+				4C7B969D2C57E078005C400B /* CloseButton.swift in Sources */,
+				4C7B96A12C57E0C5005C400B /* MaskView.swift in Sources */,
+				4C63F5A62BFF3D5F00639819 /* WelcomeScreen.swift in Sources */,
+				4C7B96AF2C5B9A81005C400B /* ParticipantsView.swift in Sources */,
+				4C7B96B32C5BCD26005C400B /* PickerSection.swift in Sources */,
+				4C60657C2C622F7D00086FF0 /* ConfirmationViewModel.swift in Sources */,
+				4C7B96B12C5BCB7D005C400B /* BookingViewModel.swift in Sources */,
+				4C7B96AB2C5AB2A1005C400B /* ProfileView.swift in Sources */,
+				4C7B96992C57DDA4005C400B /* StoryStruct.swift in Sources */,
+				4C7B96AD2C5B9A24005C400B /* DateSelectionView.swift in Sources */,
+				4CDF02D32C60EF28005C431E /* TextFieldView.swift in Sources */,
+				4C7B96A52C57E10A005C400B /* ConfigurationTimer.swift in Sources */,
 				4C63F59A2BFF3AA100639819 /* ContentView.swift in Sources */,
+				4CDF02D12C5EB83A005C431E /* ParticipantsViewModel.swift in Sources */,
+				4C70975C2C0F2D1000CABD42 /* TabBarView.swift in Sources */,
+				4C7B96972C57D457005C400B /* StoryView.swift in Sources */,
+				4CDF02D72C60F09B005C431E /* ParticipantStructView.swift in Sources */,
+				4C6065762C60F45500086FF0 /* Participant.swift in Sources */,
+				4C7B969F2C57E0A6005C400B /* ProgressBar.swift in Sources */,
 				4C63F5982BFF3AA100639819 /* SilaSilaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
