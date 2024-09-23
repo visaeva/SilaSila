@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct ConfirmationView: View {
-    var participants: [Participant]
-    @StateObject private var viewModel = ConfirmationViewModel()
+    @ObservedObject var viewModel: ConfirmationViewModel
+    @Binding var participants: [Participant]
     
     var body: some View {
         NavigationStack {
@@ -37,10 +37,13 @@ struct ConfirmationView: View {
                             .font(.system(size: 17, weight: .bold))
                     }
                     .padding()
-                    ForEach(participants, id: \.id) { participant in
+                    
+                    let validParticipants = participants.filter { !$0.name.isEmpty && !$0.lastName.isEmpty && !$0.email.isEmpty }
+                    
+                    ForEach(Array(validParticipants.enumerated()), id: \.element.id) { index, participant in
                         VStack(alignment: .leading) {
                             Text("Электронная почта")
-                                .font(.system(size: 17, weight: .regular))
+                                .font(.system(size: 17, weight: .bold))
                                 .foregroundStyle(.gray)
                             
                             Text(participant.email)
@@ -100,7 +103,6 @@ struct ConfirmationView: View {
                                 
                             }
                             .padding(.trailing, 20)
-                            
                         }
                         .padding()
                         
@@ -110,28 +112,32 @@ struct ConfirmationView: View {
                                     .foregroundColor(.gray)
                                     .font(.system(size: 17, weight: .bold))
                                 
-                                
-                                Text("1 января 1990")
+                                Text(participant.selectedDate, style: .date)
                                     .foregroundColor(.black)
                                     .font(.system(size: 17, weight: .regular))
                             }
                         }
                         .padding()
                         Divider()
-                        PickerSection(title: "Выберите способ оплаты", selection: $viewModel.selectedPay, items: viewModel.payments)
                         
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text("Промокод")
-                                    .foregroundColor(.gray)
-                                    .font(.system(size: 17, weight: .bold))
-                                
-                                Text("Введите промокод")
-                                    .foregroundColor(.black)
-                                    .font(.system(size: 17, weight: .regular))
+                        if index == 0 {
+                            PickerSection(title: "Выберите способ оплаты", selection: $viewModel.selectedPay, items: viewModel.payments)
+                                .padding([.leading, .trailing], 20)
+                            
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text("Промокод")
+                                        .foregroundColor(.gray)
+                                        .font(.system(size: 17, weight: .bold))
+                                    
+                                    TextField("Введите промокод", text: $viewModel.promoCode)
+                                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                                        .foregroundColor(.black)
+                                        .font(.system(size: 17, weight: .regular))
+                                }
                             }
+                            .padding()
                         }
-                        .padding()
                     }
                     Spacer()
                 }
@@ -141,7 +147,9 @@ struct ConfirmationView: View {
 }
 
 #Preview {
-    ConfirmationView(participants: [
-        Participant(name: "Иван", lastName: "Иванов", phoneNumber: "8-999-999-99-99", email: "ivanovivan@gmail.com", selectedExperience: "Нет опыта", selectedDate: Date())
-    ])
+    let viewModel = ConfirmationViewModel()
+    let participants = [
+        Participant(name: "Иван", lastName: "Иванов", phoneNumber: "+7 999 999 9999", email: "ivan@example.com", selectedExperience: "Нет опыта", selectedDate: Date())
+    ]
+    return ConfirmationView(viewModel: viewModel, participants: .constant(participants))
 }

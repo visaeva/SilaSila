@@ -2,7 +2,8 @@ import SwiftUI
 
 struct BookingView: View {
     @StateObject private var viewModel = BookingViewModel()
-    
+    @StateObject private var participantsViewModel = ParticipantsViewModel()
+    @StateObject private var confirmationViewModel = ConfirmationViewModel()
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
@@ -155,12 +156,12 @@ struct BookingView: View {
                         times: viewModel.times
                     )
                 } else if viewModel.selection == 1 {
-                    ParticipantsView(onNext: {
-                        viewModel.selection = 2
-                    }, participants: $viewModel.participants)
+                    ParticipantsView(viewModel: participantsViewModel,
+                                     onNext: {
+                        viewModel.selection = 2 },
+                                     participants: $viewModel.participants)
                 } else if viewModel.selection == 2 {
-                    
-                    ConfirmationView(participants: viewModel.participants)
+                    ConfirmationView(viewModel: confirmationViewModel, participants: $viewModel.participants)
                 }
             }
             .padding(.top, 20)
