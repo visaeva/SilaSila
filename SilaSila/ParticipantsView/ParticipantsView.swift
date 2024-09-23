@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ParticipantsView: View {
-    @StateObject private var viewModel = ParticipantsViewModel()
+    @ObservedObject var viewModel: ParticipantsViewModel
     var onNext: () -> Void
     @Binding var participants: [Participant]
     
@@ -74,5 +74,5 @@ struct ParticipantsView: View {
 
 
 #Preview {
-    ParticipantsView(onNext: {}, participants: .constant([]))
+    ParticipantsView(viewModel: ParticipantsViewModel(), onNext: {}, participants: .constant([]))
 }
