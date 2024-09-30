@@ -19,7 +19,7 @@ struct TextFieldView: View {
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.gray)
+                        .fill(Color.grayBackground)
                 )
                 .frame(width: 180)
         }
