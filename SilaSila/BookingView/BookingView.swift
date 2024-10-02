@@ -4,6 +4,8 @@ struct BookingView: View {
     @StateObject private var viewModel = BookingViewModel()
     @StateObject private var participantsViewModel = ParticipantsViewModel()
     @StateObject private var confirmationViewModel = ConfirmationViewModel()
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
@@ -169,9 +171,20 @@ struct BookingView: View {
                                      selectedTime: $viewModel.selectedTime)
                 }
             }
-            .padding(.top, 20)
+            .padding(.top, -15)
             Spacer()
         }
+        .toolbar {
+            ToolbarItem(placement:.navigationBarLeading) {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "chevron.left")
+                        .foregroundStyle(.black)
+                }
+            }
+        }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
