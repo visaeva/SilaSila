@@ -6,6 +6,11 @@ struct ConfirmationView: View {
     @State private var isCheckedPersonal: Bool = false
     @State private var isCheckedOther: Bool = false
     @State private var isCheckedThird: Bool = false
+    @Binding var selectedBase: String
+    @Binding var selectedBoat: String
+    @Binding var selectedDate: String
+    @Binding var selectedTime: String
+    
     
     var body: some View {
         NavigationStack {
@@ -19,7 +24,7 @@ struct ConfirmationView: View {
                     .padding()
                     
                     HStack {
-                        Text("7 августа, 07:30")
+                        Text("\(selectedDate), \(selectedTime)")
                             .foregroundStyle(.black)
                             .font(.system(size: 17, weight: .bold))
                     }
@@ -27,7 +32,7 @@ struct ConfirmationView: View {
                     .padding(.top, -20)
                     
                     HStack {
-                        Text("Тренировка под парусами Ultima Яндекс GO")
+                        Text("\(selectedBase) \(selectedBoat)")
                             .foregroundStyle(.black)
                             .font(.system(size: 17, weight: .regular))
                     }
@@ -188,5 +193,9 @@ struct ConfirmationView: View {
     let participants = [
         Participant(name: "Иван", lastName: "Иванов", phoneNumber: "+7 999 999 9999", email: "ivan@example.com", selectedExperience: "Нет опыта", selectedDate: Date())
     ]
-    return ConfirmationView(viewModel: viewModel, participants: .constant(participants))
+    return ConfirmationView(viewModel: viewModel, participants: .constant(participants),
+                            selectedBase: .constant("Строгино"),
+                            selectedBoat: .constant("SV20 (4 человека)"),
+                            selectedDate: .constant("1 августа | Четверг"),
+                            selectedTime: .constant("10:00"))
 }

@@ -161,7 +161,12 @@ struct BookingView: View {
                         viewModel.selection = 2 },
                                      participants: $viewModel.participants)
                 } else if viewModel.selection == 2 {
-                    ConfirmationView(viewModel: confirmationViewModel, participants: $viewModel.participants)
+                    ConfirmationView(viewModel: confirmationViewModel,
+                                     participants: $viewModel.participants,
+                                     selectedBase: $viewModel.selectedBase,
+                                     selectedBoat: $viewModel.selectedBoat,
+                                     selectedDate: $viewModel.selectedDate,
+                                     selectedTime: $viewModel.selectedTime)
                 }
             }
             .padding(.top, 20)
