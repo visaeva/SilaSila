@@ -3,6 +3,7 @@ import SwiftUI
 
 struct TextFieldView: View {
     var title: String
+    var placeholder: String
     @Binding var text: String
     
     var body: some View {
@@ -12,7 +13,7 @@ struct TextFieldView: View {
                 .font(.system(size: 17, weight: .bold))
                 .padding(.leading, 10)
             
-            TextField("Введите \(title.lowercased())", text: $text)
+            TextField(placeholder, text: $text)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.black)
                 .font(.system(size: 17, weight: .regular))

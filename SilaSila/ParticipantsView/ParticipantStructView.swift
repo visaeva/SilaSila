@@ -12,14 +12,14 @@ struct ParticipantStructView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                TextFieldView(title: "Имя", text: $name)
+                TextFieldView(title: "Имя", placeholder: "Ввведите имя", text: $name)
                 Spacer()
-                TextFieldView(title: "Фамилия", text: $lastName)
+                TextFieldView(title: "Фамилия", placeholder: "Введите фамилию", text: $lastName)
             }
             .padding()
             
             HStack {
-                TextFieldView(title: "Телефон", text: $phoneNumber)
+                TextFieldView(title: "Телефон", placeholder: "Введите телефон", text: $phoneNumber)
                     .onChange(of: phoneNumber) {
                         if !phoneNumber.isEmpty {
                             phoneNumber = phoneNumber.formatPhoneNumber()
@@ -50,7 +50,7 @@ struct ParticipantStructView: View {
             .padding()
             
             HStack {
-                TextFieldView(title: "Электронная почта", text: $email)
+                TextFieldView(title: "Электронная почта", placeholder: "Введите почту", text: $email)
                 Spacer()
                 DatePickerView(title: "Дата рождения", date: $selectedDate)
             }
