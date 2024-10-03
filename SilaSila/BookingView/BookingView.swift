@@ -4,6 +4,8 @@ struct BookingView: View {
     @StateObject private var viewModel = BookingViewModel()
     @StateObject private var participantsViewModel = ParticipantsViewModel()
     @StateObject private var confirmationViewModel = ConfirmationViewModel()
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
@@ -161,12 +163,28 @@ struct BookingView: View {
                         viewModel.selection = 2 },
                                      participants: $viewModel.participants)
                 } else if viewModel.selection == 2 {
-                    ConfirmationView(viewModel: confirmationViewModel, participants: $viewModel.participants)
+                    ConfirmationView(viewModel: confirmationViewModel,
+                                     participants: $viewModel.participants,
+                                     selectedBase: $viewModel.selectedBase,
+                                     selectedBoat: $viewModel.selectedBoat,
+                                     selectedDate: $viewModel.selectedDate,
+                                     selectedTime: $viewModel.selectedTime)
                 }
             }
-            .padding(.top, 20)
+            .padding(.top, -15)
             Spacer()
         }
+        .toolbar {
+            ToolbarItem(placement:.navigationBarLeading) {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "chevron.left")
+                        .foregroundStyle(.black)
+                }
+            }
+        }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

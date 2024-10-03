@@ -3,6 +3,14 @@ import SwiftUI
 struct ConfirmationView: View {
     @ObservedObject var viewModel: ConfirmationViewModel
     @Binding var participants: [Participant]
+    @State private var isCheckedPersonal: Bool = false
+    @State private var isCheckedOther: Bool = false
+    @State private var isCheckedThird: Bool = false
+    @Binding var selectedBase: String
+    @Binding var selectedBoat: String
+    @Binding var selectedDate: String
+    @Binding var selectedTime: String
+    
     
     var body: some View {
         NavigationStack {
@@ -16,7 +24,7 @@ struct ConfirmationView: View {
                     .padding()
                     
                     HStack {
-                        Text("7 августа, 07:30")
+                        Text("\(selectedDate), \(selectedTime)")
                             .foregroundStyle(.black)
                             .font(.system(size: 17, weight: .bold))
                     }
@@ -24,7 +32,7 @@ struct ConfirmationView: View {
                     .padding(.top, -20)
                     
                     HStack {
-                        Text("Тренировка под парусами Ultima Яндекс GO")
+                        Text("\(selectedBase) \(selectedBoat)")
                             .foregroundStyle(.black)
                             .font(.system(size: 17, weight: .regular))
                     }
@@ -58,7 +66,6 @@ struct ConfirmationView: View {
                                     .foregroundColor(.gray)
                                     .font(.system(size: 17, weight: .bold))
                                 
-                                
                                 Text(participant.name)
                                     .foregroundColor(.black)
                                     .font(.system(size: 17, weight: .regular))
@@ -73,7 +80,6 @@ struct ConfirmationView: View {
                                 Text(participant.lastName)
                                     .foregroundColor(.black)
                                     .font(.system(size: 17, weight: .regular))
-                                
                             }
                             .padding(.trailing, 20)
                         }
@@ -84,7 +90,6 @@ struct ConfirmationView: View {
                                 Text("Номер телефона")
                                     .foregroundColor(.gray)
                                     .font(.system(size: 17, weight: .bold))
-                                
                                 
                                 Text(participant.phoneNumber)
                                     .foregroundColor(.black)
@@ -140,7 +145,44 @@ struct ConfirmationView: View {
                         }
                     }
                     Spacer()
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("Комментарий")
+                                .foregroundColor(.gray)
+                                .font(.system(size: 17, weight: .bold))
+                            
+                            TextEditor(text: $viewModel.comment)
+                                .padding(4)
+                                .frame(height: 70)
+                                .background(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
+                                .foregroundColor(.black)
+                                .font(.system(size: 17, weight: .regular))
+                        }
+                    }
+                    .padding()
+                    Divider()
+                    
+                    VStack {
+                        ConsentRow(isChecked: $isCheckedPersonal, text: "Согласен на обработку персональных данных", subtitle: nil, link: "https://silavetra.com/legal/personal-data")
+                        ConsentRow(isChecked: $isCheckedOther, text: "Согласен с публичной офертой", subtitle:"Занятия на яхтах — безопасные, но достаточно активные.\nПоэтому в целях вашей же безопасности мы не допускаем до тренировок и прогулок беременных и людей с серьезными\nтравмами. Также мы не допускаем до тренировок участников в состоянии даже легкого алкогольного опьянения.", link: "https://silavetra.com/legal/strogino")
+                        ConsentRow(isChecked: $isCheckedThird, text: "Согласен с условиями отмены и переноса тренировок", subtitle: "Вы можете отменить занятие, если до него осталось больше\n72 часов, а перенести — за 48 часов и более.", link: "https://silavetra.com/legal/strogino#10")
+                    }
+                    .padding()
                 }
+                Button(action: {
+                    // Переход на страницу оплаты
+                    print("Оплатить нажата")
+                }) {
+                    Text("Оплатить")
+                        .font(.system(size: 17, weight: .bold))
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.gray)
+                        .cornerRadius(25)
+                }
+                .padding(.horizontal, 20)
+                .padding(.bottom, 20)
             }
         }
     }
@@ -151,5 +193,9 @@ struct ConfirmationView: View {
     let participants = [
         Participant(name: "Иван", lastName: "Иванов", phoneNumber: "+7 999 999 9999", email: "ivan@example.com", selectedExperience: "Нет опыта", selectedDate: Date())
     ]
-    return ConfirmationView(viewModel: viewModel, participants: .constant(participants))
+    return ConfirmationView(viewModel: viewModel, participants: .constant(participants),
+                            selectedBase: .constant("Строгино"),
+                            selectedBoat: .constant("SV20 (4 человека)"),
+                            selectedDate: .constant("1 августа | Четверг"),
+                            selectedTime: .constant("10:00"))
 }

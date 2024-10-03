@@ -14,52 +14,54 @@ struct DateSelectionView: View {
     var times: [String]
     
     var body: some View {
-        VStack {
-            HStack {
-                Button(action: {
-                    if numberOfPeople > 1 {
-                        numberOfPeople -= 1
+        ScrollView {
+            VStack {
+                HStack {
+                    Button(action: {
+                        if numberOfPeople > 1 {
+                            numberOfPeople -= 1
+                        }
+                    }) {
+                        Image(systemName: "minus.circle")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .foregroundStyle(.black)
                     }
-                }) {
-                    Image(systemName: "minus.circle")
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                        .foregroundStyle(.black)
-                }
-                .padding()
-                
-                Text("\(numberOfPeople) человек")
-                    .font(.title)
-                Button(action: {
-                    numberOfPeople += 1
-                }) {
-                    Image(systemName: "plus.circle")
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                        .foregroundStyle(.black)
-                }
-                .padding()
-            }
-            .padding(.bottom, -25)
-            PickerSection(title: "Выберите базу", selection: $selectedBase, items: bases)
-            PickerSection(title: "Выберите лодку", selection: $selectedBoat, items: boats)
-            PickerSection(title: "Выберите дату", selection: $selectedDate, items: dates)
-            PickerSection(title: "Выберите время", selection: $selectedTime, items: times)
-                .padding(.bottom, 20)
-            Button(action: {
-                onNext()
-            }) {
-                Text("ДАЛЕЕ")
-                    .font(.headline)
                     .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.black)
-                    .foregroundColor(.white)
-                    .cornerRadius(15)
+                    
+                    Text("\(numberOfPeople) человек")
+                        .font(.title)
+                    Button(action: {
+                        numberOfPeople += 1
+                    }) {
+                        Image(systemName: "plus.circle")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .foregroundStyle(.black)
+                    }
+                    .padding()
+                }
+                .padding(.bottom, -25)
+                PickerSection(title: "Выберите базу", selection: $selectedBase, items: bases)
+                PickerSection(title: "Выберите лодку", selection: $selectedBoat, items: boats)
+                PickerSection(title: "Выберите дату", selection: $selectedDate, items: dates)
+                PickerSection(title: "Выберите время", selection: $selectedTime, items: times)
+                    .padding(.bottom, 20)
+                Button(action: {
+                    onNext()
+                }) {
+                    Text("ДАЛЕЕ")
+                        .font(.headline)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.black)
+                        .foregroundColor(.white)
+                        .cornerRadius(15)
+                }
+                .padding(.horizontal)
             }
-            .padding(.horizontal)
+            .padding()
         }
-        .padding()
     }
 }
 

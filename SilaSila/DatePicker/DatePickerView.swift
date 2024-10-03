@@ -17,7 +17,7 @@ struct DatePickerView: View {
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.gray)
+                        .fill(Color.grayBackground)
                         .frame(width: 180, height: 55)
                 )
                 .frame(width: 180)
