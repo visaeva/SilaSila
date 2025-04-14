@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4C5A4BAE2CA6D6DF0028082A /* ConsentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5A4BAD2CA6D6DF0028082A /* ConsentRow.swift */; };
 		4C5A4BB02CA6E07F0028082A /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5A4BAF2CA6E07E0028082A /* WebView.swift */; };
+		4C5A4BB62CAED2CA0028082A /* ProfileStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5A4BB52CAED2CA0028082A /* ProfileStruct.swift */; };
+		4C5A4BB82CAED8DD0028082A /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5A4BB72CAED8DD0028082A /* ProfileViewModel.swift */; };
 		4C6065762C60F45500086FF0 /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6065752C60F45500086FF0 /* Participant.swift */; };
 		4C6065792C60F88800086FF0 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6065782C60F88800086FF0 /* ConfirmationView.swift */; };
 		4C60657C2C622F7D00086FF0 /* ConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C60657B2C622F7C00086FF0 /* ConfirmationViewModel.swift */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		4C5A4BAD2CA6D6DF0028082A /* ConsentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentRow.swift; sourceTree = "<group>"; };
 		4C5A4BAF2CA6E07E0028082A /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		4C5A4BB52CAED2CA0028082A /* ProfileStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStruct.swift; sourceTree = "<group>"; };
+		4C5A4BB72CAED8DD0028082A /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		4C6065752C60F45500086FF0 /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
 		4C6065782C60F88800086FF0 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		4C60657B2C622F7C00086FF0 /* ConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewModel.swift; sourceTree = "<group>"; };
@@ -94,6 +98,16 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
+		4C5A4BB22CAECA2B0028082A /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				4C7B96AA2C5AB2A1005C400B /* ProfileView.swift */,
+				4C5A4BB72CAED8DD0028082A /* ProfileViewModel.swift */,
+				4C5A4BB52CAED2CA0028082A /* ProfileStruct.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
 		4C6065772C60F6A600086FF0 /* DatePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,9 +148,9 @@
 				4C63F5972BFF3AA100639819 /* SilaSilaApp.swift */,
 				4C63F5992BFF3AA100639819 /* ContentView.swift */,
 				4C70975B2C0F2D1000CABD42 /* TabBarView.swift */,
-				4C7B96AA2C5AB2A1005C400B /* ProfileView.swift */,
 				4C70975D2C0F312900CABD42 /* MainScreen.swift */,
 				4C63F5A52BFF3D5F00639819 /* WelcomeScreen.swift */,
+				4C5A4BB22CAECA2B0028082A /* ProfileView */,
 				4C7B96B42C5E9CFD005C400B /* BookingView */,
 				4CDF02D82C60F0D8005C431E /* ParticipantsView */,
 				4C6065772C60F6A600086FF0 /* DatePicker */,
@@ -283,8 +297,10 @@
 				4C7097602C0F828900CABD42 /* BookingView.swift in Sources */,
 				4C7B969D2C57E078005C400B /* CloseButton.swift in Sources */,
 				4C7B96A12C57E0C5005C400B /* MaskView.swift in Sources */,
+				4C5A4BB62CAED2CA0028082A /* ProfileStruct.swift in Sources */,
 				4C63F5A62BFF3D5F00639819 /* WelcomeScreen.swift in Sources */,
 				4C7B96AF2C5B9A81005C400B /* ParticipantsView.swift in Sources */,
+				4C5A4BB82CAED8DD0028082A /* ProfileViewModel.swift in Sources */,
 				4C7B96B32C5BCD26005C400B /* PickerSection.swift in Sources */,
 				4C60657C2C622F7D00086FF0 /* ConfirmationViewModel.swift in Sources */,
 				4C7B96B12C5BCB7D005C400B /* BookingViewModel.swift in Sources */,

@@ -17,18 +17,17 @@ struct MainScreen: View {
                         Spacer()
                         NavigationLink(destination: BookingView()) {
                             Text("Записаться на тренировку")
-                                .foregroundStyle(.black)
+                                .foregroundStyle(.white)
                                 .padding(10)
-                                .background(.white)
+                                .background(.black)
                                 .cornerRadius(10)
                         }
                         .navigationTitle("")
                     }
                 }
             }
-            .background(.black)
+         //   .background(.black)
         }
-        .tint(.red)
     }
 }
 
