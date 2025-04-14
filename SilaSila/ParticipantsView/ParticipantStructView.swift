@@ -1,65 +1,81 @@
 import SwiftUI
 
 struct ParticipantStructView: View {
-    @Binding var name: String
-    @Binding var lastName: String
-    @Binding var phoneNumber: String
-    @Binding var email: String
-    @Binding var selectedExperience: String
-    @Binding var selectedDate: Date
-    let experiences: [String]
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                TextFieldView(title: "Имя", placeholder: "Ввведите имя", text: $name)
-                Spacer()
-                TextFieldView(title: "Фамилия", placeholder: "Введите фамилию", text: $lastName)
-            }
-            .padding()
-            
-            HStack {
-                TextFieldView(title: "Телефон", placeholder: "Введите телефон", text: $phoneNumber)
-                    .onChange(of: phoneNumber) {
-                        if !phoneNumber.isEmpty {
-                            phoneNumber = phoneNumber.formatPhoneNumber()
-                        }
-                    }
-                Spacer()
-                
-                VStack(alignment: .leading) {
-                    Text("Яхтенный опыт")
-                        .foregroundColor(.black)
-                        .font(.system(size: 17, weight: .bold))
-                        .padding(.leading, 10)
-                    
-                    Picker("Выберите уровень", selection: $selectedExperience) {
-                        ForEach(experiences, id: \.self) { experience in
-                            Text(experience).tag(experience)
-                        }
-                    }
-                    .padding()
-                    .background(
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(Color.grayBackground)
-                    )
-                    .frame(width: 180)
-                    .accentColor(.black)
-                }
-            }
-            .padding()
-            
-            HStack {
-                TextFieldView(title: "Электронная почта", placeholder: "Введите почту", text: $email)
-                Spacer()
-                DatePickerView(title: "Дата рождения", date: $selectedDate)
-            }
-            .padding()
-        }
-    }
+	@Binding var name: String
+	@Binding var lastName: String
+	@Binding var phoneNumber: String
+	@Binding var email: String
+	@Binding var selectedExperience: String
+	@Binding var selectedDate: Date
+	let experiences: [String]
+	
+	var body: some View {
+		VStack(alignment: .leading) {
+			username
+			
+			contactInfo
+			userInfo
+		}
+	}
+	private var username: some View {
+		HStack {
+			TextFieldView(title: "Имя", placeholder: "Ввведите имя", text: $name)
+			Spacer()
+			TextFieldView(title: "Фамилия", placeholder: "Введите фамилию", text: $lastName)
+		}
+		.padding()
+	}
+	
+	private var contactInfo: some View {
+		HStack {
+			TextFieldView(title: "Телефон", placeholder: "Введите телефон", text: $phoneNumber)
+				.onChange(of: phoneNumber) {
+					if !phoneNumber.isEmpty {
+						phoneNumber = phoneNumber.formatPhoneNumber()
+					}
+				}
+			Spacer()
+			
+			skillInfo
+		}
+		.padding()
+	}
+	
+	private var skillInfo: some View {
+		VStack(alignment: .leading) {
+			Text("Яхтенный опыт")
+				.foregroundColor(.black)
+				.font(.system(size: 17, weight: .bold))
+				.padding(.leading, 10)
+			
+			Picker("Выберите уровень", selection: $selectedExperience) {
+				ForEach(experiences, id: \.self) { experience in
+					Text(experience).tag(experience)
+				}
+			}
+			.padding()
+			.background(
+				RoundedRectangle(cornerRadius: 20)
+					.fill(Color.grayBackground)
+			)
+			.frame(width: 180)
+			.accentColor(.black)
+		}
+	}
+	
+	private var userInfo: some View {
+		
+		HStack {
+			TextFieldView(title: "Электронная почта", placeholder: "Введите почту", text: $email)
+			Spacer()
+			DatePickerView(title: "Дата рождения", date: $selectedDate)
+		}
+		.padding()
+	}
+	
 }
 
 #Preview {
-    ParticipantStructView(name: .constant("Иван"), lastName: .constant("Иванов"), phoneNumber: .constant("8-999-999-99-99"), email: .constant("ivanovivan@gmail.com"), selectedExperience: .constant("Нет опыта"), selectedDate: .constant(Date()), experiences: ["Нет опыта"])
+	ParticipantStructView(name: .constant("Иван"), lastName: .constant("Иванов"), phoneNumber: .constant("8-999-999-99-99"), email: .constant("ivanovivan@gmail.com"), selectedExperience: .constant("Нет опыта"), selectedDate: .constant(Date()), experiences: ["Нет опыта"])
 }
 
