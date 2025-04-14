@@ -10,7 +10,12 @@ struct ConfirmationView: View {
 	@Binding var selectedBoat: String
 	@Binding var selectedDate: String
 	@Binding var selectedTime: String
-	
+	private var isPayButtonEnabled: Bool {
+		!viewModel.selectedPay.isEmpty &&
+		isCheckedPersonal &&
+		isCheckedOther &&
+		isCheckedThird
+	}
 	
 	var body: some View {
 		NavigationStack {
@@ -26,19 +31,8 @@ struct ConfirmationView: View {
 					Divider()
 					agreement
 				}
-				Button(action: {
-					print("Оплатить нажата")
-				}) {
-					Text("Оплатить")
-						.font(.system(size: 17, weight: .bold))
-						.foregroundColor(.white)
-						.padding()
-						.frame(maxWidth: .infinity)
-						.background(Color.gray)
-						.cornerRadius(25)
-				}
-				.padding(.horizontal, 20)
-				.padding(.bottom, 20)
+				payButton
+				
 			}
 		}
 	}
@@ -207,6 +201,22 @@ struct ConfirmationView: View {
 			ConsentRow(isChecked: $isCheckedThird, text: "Согласен с условиями отмены и переноса тренировок", subtitle: "Вы можете отменить занятие, если до него осталось больше\n72 часов, а перенести — за 48 часов и более.", link: "https://silavetra.com/legal/strogino#10")
 		}
 		.padding()
+	}
+	
+	private var payButton: some View {
+		Button(action: {
+			print("Оплатить нажата")
+		}) {
+			Text("Оплатить")
+				.font(.system(size: 17, weight: .bold))
+				.foregroundColor(.white)
+				.padding()
+				.frame(maxWidth: .infinity)
+				.background(isPayButtonEnabled ? Color.black : Color.gray)
+				.cornerRadius(25)
+		}
+		.padding(.horizontal, 20)
+		.padding(.bottom, 20)
 	}
 }
 
