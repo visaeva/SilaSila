@@ -28,7 +28,7 @@ struct BookingView: View {
 						fifthTab
 					}
 					
-					Button(action: {
+					/*Button(action: {
 						viewModel.selection = 3
 					}) {
 						thirdTab
@@ -38,7 +38,7 @@ struct BookingView: View {
 						viewModel.selection = 4
 					}) {
 						fourthTab
-					}
+					}*/
 				}
 				.padding(.horizontal)
 				.padding(.bottom, -5)

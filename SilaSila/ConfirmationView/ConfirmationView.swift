@@ -2,14 +2,16 @@ import SwiftUI
 
 struct ConfirmationView: View {
 	@ObservedObject var viewModel: ConfirmationViewModel
-	@Binding var participants: [Participant]
 	@State private var isCheckedPersonal: Bool = false
 	@State private var isCheckedOther: Bool = false
 	@State private var isCheckedThird: Bool = false
+	@State private var showPaymentAlert: Bool = false
+	@Binding var participants: [Participant]
 	@Binding var selectedBase: String
 	@Binding var selectedBoat: String
 	@Binding var selectedDate: String
 	@Binding var selectedTime: String
+	@Environment(\.dismiss) var dismiss
 	private var isPayButtonEnabled: Bool {
 		!viewModel.selectedPay.isEmpty &&
 		isCheckedPersonal &&
@@ -33,6 +35,11 @@ struct ConfirmationView: View {
 				}
 				payButton
 				
+			}
+			.alert("Ваша оплата прошла успешно.\nЖдем вас на тренировке!", isPresented: $showPaymentAlert) {
+				Button("ОК", role: .cancel) {
+					dismiss()
+				}
 			}
 		}
 	}
@@ -205,7 +212,7 @@ struct ConfirmationView: View {
 	
 	private var payButton: some View {
 		Button(action: {
-			print("Оплатить нажата")
+			showPaymentAlert = true
 		}) {
 			Text("Оплатить")
 				.font(.system(size: 17, weight: .bold))
