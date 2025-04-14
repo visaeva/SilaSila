@@ -43,7 +43,7 @@ struct StoriesCellView: View {
                 }
                 .padding(.vertical, 12)
             }
-            .background(Color.black)
+        //    .background(Color.black)
         }
     }
 }
