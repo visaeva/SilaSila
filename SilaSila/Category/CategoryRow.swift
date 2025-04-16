@@ -10,6 +10,7 @@ import SwiftUI
 struct CategoryRow: View {
 	var categoryName: String
 	@StateObject private var viewModel = ActivitiesViewModel()
+	@State private var selectedActivity: Activities? 
 	
 	var body: some View {
 		VStack(alignment: .leading, spacing: 8) {
@@ -36,6 +37,9 @@ struct CategoryRow: View {
 									.lineLimit(2)
 									.frame(width: 150)
 							}
+							.onTapGesture {
+								selectedActivity = activity
+							}
 							
 							Button(action: {
 								withAnimation {
@@ -52,6 +56,9 @@ struct CategoryRow: View {
 				}
 				.padding(.horizontal, 16)
 			}
+		}
+		.sheet(item: $selectedActivity) { activity in
+			ActivityDetailModal(activity: activity)
 		}
 	}
 }

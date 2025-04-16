@@ -36,6 +36,9 @@
 		4C7B96AF2C5B9A81005C400B /* ParticipantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B96AE2C5B9A81005C400B /* ParticipantsView.swift */; };
 		4C7B96B12C5BCB7D005C400B /* BookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B96B02C5BCB7C005C400B /* BookingViewModel.swift */; };
 		4C7B96B32C5BCD26005C400B /* PickerSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B96B22C5BCD26005C400B /* PickerSection.swift */; };
+		4C99EF6E2DAFB89600778DAA /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99EF6D2DAFB89600778DAA /* CategoryRow.swift */; };
+		4C99EF702DAFB8E200778DAA /* ActivitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99EF6F2DAFB8E200778DAA /* ActivitiesViewModel.swift */; };
+		4C99EF772DAFCF5500778DAA /* ActivityDetailModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99EF762DAFCF5500778DAA /* ActivityDetailModal.swift */; };
 		4CDF02D12C5EB83A005C431E /* ParticipantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF02D02C5EB83A005C431E /* ParticipantsViewModel.swift */; };
 		4CDF02D32C60EF28005C431E /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF02D22C60EF28005C431E /* TextFieldView.swift */; };
 		4CDF02D52C60EFF9005C431E /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF02D42C60EFF9005C431E /* DatePickerView.swift */; };
@@ -73,6 +76,9 @@
 		4C7B96AE2C5B9A81005C400B /* ParticipantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsView.swift; sourceTree = "<group>"; };
 		4C7B96B02C5BCB7C005C400B /* BookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewModel.swift; sourceTree = "<group>"; };
 		4C7B96B22C5BCD26005C400B /* PickerSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSection.swift; sourceTree = "<group>"; };
+		4C99EF6D2DAFB89600778DAA /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
+		4C99EF6F2DAFB8E200778DAA /* ActivitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewModel.swift; sourceTree = "<group>"; };
+		4C99EF762DAFCF5500778DAA /* ActivityDetailModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailModal.swift; sourceTree = "<group>"; };
 		4CDF02D02C5EB83A005C431E /* ParticipantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsViewModel.swift; sourceTree = "<group>"; };
 		4CDF02D22C60EF28005C431E /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		4CDF02D42C60EFF9005C431E /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
@@ -150,6 +156,7 @@
 				4C70975B2C0F2D1000CABD42 /* TabBarView.swift */,
 				4C70975D2C0F312900CABD42 /* MainScreen.swift */,
 				4C63F5A52BFF3D5F00639819 /* WelcomeScreen.swift */,
+				4C99EF6C2DAFB85700778DAA /* Category */,
 				4C5A4BB22CAECA2B0028082A /* ProfileView */,
 				4C7B96B42C5E9CFD005C400B /* BookingView */,
 				4CDF02D82C60F0D8005C431E /* ParticipantsView */,
@@ -204,6 +211,16 @@
 				4C7B96AC2C5B9A24005C400B /* DateSelectionView.swift */,
 			);
 			path = BookingView;
+			sourceTree = "<group>";
+		};
+		4C99EF6C2DAFB85700778DAA /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				4C99EF6D2DAFB89600778DAA /* CategoryRow.swift */,
+				4C99EF6F2DAFB8E200778DAA /* ActivitiesViewModel.swift */,
+				4C99EF762DAFCF5500778DAA /* ActivityDetailModal.swift */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		4CDF02D82C60F0D8005C431E /* ParticipantsView */ = {
@@ -290,6 +307,7 @@
 			files = (
 				4C7B969B2C57E050005C400B /* StoriesAllView.swift in Sources */,
 				4C6065792C60F88800086FF0 /* ConfirmationView.swift in Sources */,
+				4C99EF6E2DAFB89600778DAA /* CategoryRow.swift in Sources */,
 				4CDF02D52C60EFF9005C431E /* DatePickerView.swift in Sources */,
 				4C70975E2C0F312900CABD42 /* MainScreen.swift in Sources */,
 				4C7B96A32C57E0EB005C400B /* MaskFragmentView.swift in Sources */,
@@ -307,6 +325,7 @@
 				4C7B96AB2C5AB2A1005C400B /* ProfileView.swift in Sources */,
 				4C7B96992C57DDA4005C400B /* StoryStruct.swift in Sources */,
 				4C7B96AD2C5B9A24005C400B /* DateSelectionView.swift in Sources */,
+				4C99EF702DAFB8E200778DAA /* ActivitiesViewModel.swift in Sources */,
 				4CDF02D32C60EF28005C431E /* TextFieldView.swift in Sources */,
 				4C7B96A52C57E10A005C400B /* ConfigurationTimer.swift in Sources */,
 				4C5A4BB02CA6E07F0028082A /* WebView.swift in Sources */,
@@ -317,6 +336,7 @@
 				4C7B96972C57D457005C400B /* StoryView.swift in Sources */,
 				4CDF02D72C60F09B005C431E /* ParticipantStructView.swift in Sources */,
 				4C6065762C60F45500086FF0 /* Participant.swift in Sources */,
+				4C99EF772DAFCF5500778DAA /* ActivityDetailModal.swift in Sources */,
 				4C7B969F2C57E0A6005C400B /* ProgressBar.swift in Sources */,
 				4C63F5982BFF3AA100639819 /* SilaSilaApp.swift in Sources */,
 			);
@@ -460,6 +480,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,7 +490,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -489,6 +510,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -498,7 +520,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
