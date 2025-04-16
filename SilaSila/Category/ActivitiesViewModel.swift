@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Activities: Identifiable {
-	let id = UUID() 
+	let id = UUID()
 	let name: String
 	let imageName: String
 	var favourite: Bool
@@ -17,10 +17,10 @@ struct Activities: Identifiable {
 
 class ActivitiesViewModel: ObservableObject {
 	@Published var activities: [Activities] = [
-		Activities(name: "Глэмпинг", imageName: "glamping", favourite: false),
-		Activities(name: "Парусный лагерь", imageName: "lighthouse", favourite: true),
+		Activities(name: "Глэмпинг", imageName: "glamping", favourite: true),
+		Activities(name: "Парусный лагерь", imageName: "lighthouse", favourite: false),
 		Activities(name: "Камчатка. Экспедиция на яхте", imageName: "kamchatka", favourite: false),
-		Activities(name: "Каникулы в Италии", imageName: "pisa", favourite: true)
+		Activities(name: "Каникулы в Италии", imageName: "pisa", favourite: false)
 	]
 	
 	func toggleFavourite(at index: Int) {
