@@ -11,4 +11,6 @@ class ProfileViewModel: ObservableObject {
 		email: "ivanivanov@gmail.com"
 	)
 	
+	@Published var selectedImage: Image? = nil
+	
 }
