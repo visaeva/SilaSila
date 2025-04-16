@@ -11,7 +11,7 @@ struct StoriesCellView: View {
         NavigationStack {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
-                    ForEach(0..<images.count) { index in
+                    ForEach(0..<stories.count) { index in
                         let story = stories[index]
                         NavigationLink(destination: StoriesAllView(stories: stories, selectedStory: story, viewedStories: $viewedStories)) {
                             ZStack(alignment: .bottomLeading) {
