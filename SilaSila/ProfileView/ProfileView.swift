@@ -18,40 +18,58 @@ struct ProfileTabView: View {
 			.onChange(of: pickerItem) {
 				loadImage()
 			}
+			.animation(.easeInOut(duration: 0.3), value: viewModel.selectedImage)
 		}
 	}
 	
 	private var header: some View {
-		HStack(spacing: 20) {
-			PhotosPicker(
-				selection: $pickerItem,
-				matching: .images,
-				photoLibrary: .shared()) {
+		HStack(alignment: .top, spacing: 20) {
+			VStack(spacing: 8) {
+				PhotosPicker(
+					selection: $pickerItem,
+					matching: .images,
+					photoLibrary: .shared()
+				) {
 					if let selectedImage = viewModel.selectedImage {
 						selectedImage
 							.resizable()
 							.frame(width: 80, height: 80)
 							.clipShape(Circle())
+							.transition(.opacity.combined(with: .scale))
 					} else {
 						Image(viewModel.profile.image)
 							.resizable()
 							.frame(width: 80, height: 80)
 							.clipShape(Circle())
+							.transition(.opacity.combined(with: .scale))
 					}
 				}
+				
+				if viewModel.selectedImage != nil {
+					Button(action: {
+						withAnimation {
+							viewModel.selectedImage = nil
+							pickerItem = nil
+						}
+					}) {
+						Text("Удалить")
+							.font(.caption)
+							.foregroundColor(.gray)
+					}
+				}
+			}
 			
-			VStack(alignment: .leading) {
+			VStack(alignment: .leading, spacing: 5) {
 				Text("\(viewModel.profile.name) \(viewModel.profile.lastName)")
 					.font(.title)
 				Text("\(viewModel.profile.bio)")
 					.font(.subheadline)
-				
-				
 			}
+			
 			Spacer()
 		}
 		.padding(.top, 20)
-		.padding(.leading, 20)
+		.padding(.horizontal, 20)
 	}
 	
 	private var profileContacts: some View {
