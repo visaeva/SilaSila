@@ -13,7 +13,6 @@ class RegistrationViewModel: ObservableObject {
 	@Published var lastName: String = ""
 	@Published var email: String = ""
 	@Published var phoneNumber: String = ""
-	@Published var password: String = ""
 	@Published var bio: String = ""
 	@Published var isRegistrationSuccessful: Bool = false
 	@Published var errorMessage: String?
@@ -25,8 +24,6 @@ class RegistrationViewModel: ObservableObject {
 		ValidationHelper.validateSurname(surname: lastName) == nil &&
 		ValidationHelper.validateMail(mail: email) == nil &&
 		ValidationHelper.validateTelephone(telephone: phoneNumber) == nil &&
-		!password.isEmpty &&
-		password.count >= 6 &&
 		ValidationHelper.validateBio(bio: bio) == nil
 	}
 	
@@ -41,7 +38,6 @@ class RegistrationViewModel: ObservableObject {
 			lastName: lastName,
 			email: email,
 			phoneNumber: phoneNumber,
-			password: password,
 			bio: bio
 		)
 		

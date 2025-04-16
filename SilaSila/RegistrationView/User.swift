@@ -13,6 +13,5 @@ struct User: Identifiable, Codable {
 	var lastName: String
 	var email: String
 	var phoneNumber: String
-	var password: String
 	var bio: String
 }
