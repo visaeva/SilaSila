@@ -6,7 +6,7 @@ struct ProfileTabView: View {
 	@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 	@ObservedObject var viewModel: ProfileViewModel
 	@State private var pickerItem: PhotosPickerItem?
-	@State private var selectedImage: Image?
+	//@State private var selectedImage: Image?
 	
 	var body: some View {
 		NavigationStack {
@@ -36,8 +36,16 @@ struct ProfileTabView: View {
 							.frame(width: 80, height: 80)
 							.clipShape(Circle())
 							.transition(.opacity.combined(with: .scale))
+					} else if let base64String = viewModel.profile.image,
+							  let data = Data(base64Encoded: base64String),
+							  let uiImage = UIImage(data: data) {
+						Image(uiImage: uiImage)
+							.resizable()
+							.frame(width: 80, height: 80)
+							.clipShape(Circle())
+							.transition(.opacity.combined(with: .scale))
 					} else {
-						Image(viewModel.profile.image)
+						Image("avatar")
 							.resizable()
 							.frame(width: 80, height: 80)
 							.clipShape(Circle())
@@ -48,8 +56,7 @@ struct ProfileTabView: View {
 				if viewModel.selectedImage != nil {
 					Button(action: {
 						withAnimation {
-							viewModel.selectedImage = nil
-							pickerItem = nil
+							viewModel.deleteImage()
 						}
 					}) {
 						Text("Удалить")
@@ -91,13 +98,12 @@ struct ProfileTabView: View {
 	
 	private func loadImage() {
 		guard let item = pickerItem else { return }
-		
 		Task {
 			if let data = try? await item.loadTransferable(type: Data.self),
 			   let uiImage = UIImage(data: data) {
-				let image = Image(uiImage: uiImage)
 				await MainActor.run {
-					viewModel.selectedImage = image
+					viewModel.selectedImage = Image(uiImage: uiImage)
+					viewModel.saveImage(uiImage)
 				}
 			}
 		}

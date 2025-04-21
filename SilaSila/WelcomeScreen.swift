@@ -68,9 +68,11 @@ struct WelcomeScreen: View {
 			}
 			.navigationDestination(isPresented: $showRegistration) {
 				RegistrationView()
+					.transition(.slide)
 			}
 			.navigationDestination(isPresented: $showTabBarView) {
 				TabBarView()
+					.transition(.slide)
 			}
 		}
 	}

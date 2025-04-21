@@ -26,6 +26,7 @@ struct TabBarView: View {
                     }
                 
             }
+			.navigationBarBackButtonHidden()
            
             .tint(.black)
             

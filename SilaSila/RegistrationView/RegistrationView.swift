@@ -96,8 +96,10 @@ struct RegistrationView: View {
 				.padding()
 			}
 			.navigationTitle("Регистрация")
+			.navigationBarBackButtonHidden()
 			.navigationDestination(isPresented: $showTabBarView) {
 				TabBarView()
+					.transition(.slide)
 			}
 		}
 	}
