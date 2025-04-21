@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegistrationView: View {
 	@ObservedObject var viewModel = RegistrationViewModel()
-	@Environment(\.dismiss) var dismiss
+	@State private var showTabBarView = false
 	
 	var body: some View {
 		NavigationStack {
@@ -79,6 +79,9 @@ struct RegistrationView: View {
 				Spacer()
 				Button(action: {
 					viewModel.register()
+					if viewModel.isRegistrationSuccessful {
+						showTabBarView = true
+					}
 				}) {
 					Text("Зарегистрироваться")
 						.font(.title)
@@ -93,10 +96,8 @@ struct RegistrationView: View {
 				.padding()
 			}
 			.navigationTitle("Регистрация")
-			.alert("Регистрация успешна!", isPresented: $viewModel.isRegistrationSuccessful) {
-				Button("ОК") {
-					dismiss()
-				}
+			.navigationDestination(isPresented: $showTabBarView) {
+				TabBarView()
 			}
 		}
 	}

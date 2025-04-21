@@ -18,6 +18,7 @@ class RegistrationViewModel: ObservableObject {
 	@Published var errorMessage: String?
 	
 	private let userDefaultsKey = "registered_user"
+	private let isRegisteredKey = "isRegistered"
 	
 	var isFormValid: Bool {
 		ValidationHelper.validateName(name: name) == nil &&
@@ -44,6 +45,7 @@ class RegistrationViewModel: ObservableObject {
 		do {
 			let data = try JSONEncoder().encode(user)
 			UserDefaults.standard.set(data, forKey: userDefaultsKey)
+			UserDefaults.standard.set(true, forKey: isRegisteredKey)
 			isRegistrationSuccessful = true
 			errorMessage = nil
 		} catch {

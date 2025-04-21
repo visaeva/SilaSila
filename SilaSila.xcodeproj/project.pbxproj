@@ -39,6 +39,11 @@
 		4C99EF6E2DAFB89600778DAA /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99EF6D2DAFB89600778DAA /* CategoryRow.swift */; };
 		4C99EF702DAFB8E200778DAA /* ActivitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99EF6F2DAFB8E200778DAA /* ActivitiesViewModel.swift */; };
 		4C99EF772DAFCF5500778DAA /* ActivityDetailModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99EF762DAFCF5500778DAA /* ActivityDetailModal.swift */; };
+		4C99EF802DAFFDFC00778DAA /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99EF7F2DAFFDFC00778DAA /* RegistrationView.swift */; };
+		4C99EF822DAFFE1700778DAA /* PegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99EF812DAFFE1700778DAA /* PegistrationViewModel.swift */; };
+		4C99EF842DAFFEC700778DAA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99EF832DAFFEC700778DAA /* User.swift */; };
+		4C99EF862DAFFFE800778DAA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99EF852DAFFFE800778DAA /* CustomTextField.swift */; };
+		4C99EF882DB0064B00778DAA /* ValidationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99EF872DB0064B00778DAA /* ValidationHelper.swift */; };
 		4CDF02D12C5EB83A005C431E /* ParticipantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF02D02C5EB83A005C431E /* ParticipantsViewModel.swift */; };
 		4CDF02D32C60EF28005C431E /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF02D22C60EF28005C431E /* TextFieldView.swift */; };
 		4CDF02D52C60EFF9005C431E /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF02D42C60EFF9005C431E /* DatePickerView.swift */; };
@@ -79,6 +84,11 @@
 		4C99EF6D2DAFB89600778DAA /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		4C99EF6F2DAFB8E200778DAA /* ActivitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewModel.swift; sourceTree = "<group>"; };
 		4C99EF762DAFCF5500778DAA /* ActivityDetailModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailModal.swift; sourceTree = "<group>"; };
+		4C99EF7F2DAFFDFC00778DAA /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		4C99EF812DAFFE1700778DAA /* PegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PegistrationViewModel.swift; sourceTree = "<group>"; };
+		4C99EF832DAFFEC700778DAA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4C99EF852DAFFFE800778DAA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		4C99EF872DB0064B00778DAA /* ValidationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationHelper.swift; sourceTree = "<group>"; };
 		4CDF02D02C5EB83A005C431E /* ParticipantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsViewModel.swift; sourceTree = "<group>"; };
 		4CDF02D22C60EF28005C431E /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		4CDF02D42C60EFF9005C431E /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
@@ -156,6 +166,7 @@
 				4C70975B2C0F2D1000CABD42 /* TabBarView.swift */,
 				4C70975D2C0F312900CABD42 /* MainScreen.swift */,
 				4C63F5A52BFF3D5F00639819 /* WelcomeScreen.swift */,
+				4C99EF7E2DAFFDE100778DAA /* RegistrationView */,
 				4C99EF6C2DAFB85700778DAA /* Category */,
 				4C5A4BB22CAECA2B0028082A /* ProfileView */,
 				4C7B96B42C5E9CFD005C400B /* BookingView */,
@@ -221,6 +232,18 @@
 				4C99EF762DAFCF5500778DAA /* ActivityDetailModal.swift */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		4C99EF7E2DAFFDE100778DAA /* RegistrationView */ = {
+			isa = PBXGroup;
+			children = (
+				4C99EF7F2DAFFDFC00778DAA /* RegistrationView.swift */,
+				4C99EF812DAFFE1700778DAA /* PegistrationViewModel.swift */,
+				4C99EF832DAFFEC700778DAA /* User.swift */,
+				4C99EF852DAFFFE800778DAA /* CustomTextField.swift */,
+				4C99EF872DB0064B00778DAA /* ValidationHelper.swift */,
+			);
+			path = RegistrationView;
 			sourceTree = "<group>";
 		};
 		4CDF02D82C60F0D8005C431E /* ParticipantsView */ = {
@@ -312,6 +335,8 @@
 				4C70975E2C0F312900CABD42 /* MainScreen.swift in Sources */,
 				4C7B96A32C57E0EB005C400B /* MaskFragmentView.swift in Sources */,
 				4C7097582C0F0D6500CABD42 /* StoriesCellView.swift in Sources */,
+				4C99EF882DB0064B00778DAA /* ValidationHelper.swift in Sources */,
+				4C99EF822DAFFE1700778DAA /* PegistrationViewModel.swift in Sources */,
 				4C7097602C0F828900CABD42 /* BookingView.swift in Sources */,
 				4C7B969D2C57E078005C400B /* CloseButton.swift in Sources */,
 				4C7B96A12C57E0C5005C400B /* MaskView.swift in Sources */,
@@ -327,8 +352,11 @@
 				4C7B96AD2C5B9A24005C400B /* DateSelectionView.swift in Sources */,
 				4C99EF702DAFB8E200778DAA /* ActivitiesViewModel.swift in Sources */,
 				4CDF02D32C60EF28005C431E /* TextFieldView.swift in Sources */,
+				4C99EF842DAFFEC700778DAA /* User.swift in Sources */,
+				4C99EF862DAFFFE800778DAA /* CustomTextField.swift in Sources */,
 				4C7B96A52C57E10A005C400B /* ConfigurationTimer.swift in Sources */,
 				4C5A4BB02CA6E07F0028082A /* WebView.swift in Sources */,
+				4C99EF802DAFFDFC00778DAA /* RegistrationView.swift in Sources */,
 				4C63F59A2BFF3AA100639819 /* ContentView.swift in Sources */,
 				4CDF02D12C5EB83A005C431E /* ParticipantsViewModel.swift in Sources */,
 				4C5A4BAE2CA6D6DF0028082A /* ConsentRow.swift in Sources */,
