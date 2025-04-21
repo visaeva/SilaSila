@@ -56,5 +56,5 @@ struct ActivityDetailModal: View {
 }
 
 #Preview {
-	ActivityDetailModal(activity: Activities(name: "Глэмпинг", imageName: "glamping", favourite: false, description: "Отдохните в стильных домиках из морских контейнеров с пейзажами на берегу Пироговского водохранилища всего в получасе езды от столицы"))
+	ActivityDetailModal(activity: Activities(id: UUID(), name: "Глэмпинг", imageName: "glamping", favourite: false, description: "Отдохните в стильных домиках из морских контейнеров с пейзажами на берегу Пироговского водохранилища всего в получасе езды от столицы"))
 }

@@ -20,8 +20,7 @@ struct CategoryRow: View {
 			
 			ScrollView(.horizontal, showsIndicators: false) {
 				HStack(alignment: .top, spacing: 16) {
-					ForEach(viewModel.activities.indices, id: \.self) { index in
-						let activity = viewModel.activities[index]
+					ForEach(viewModel.activities, id: \.id) { activity in
 						ZStack(alignment: .topTrailing) {
 							VStack(spacing: 8) {
 								Image(activity.imageName)
@@ -43,7 +42,9 @@ struct CategoryRow: View {
 							
 							Button(action: {
 								withAnimation {
-									viewModel.toggleFavourite(at: index)
+									if let index = viewModel.activities.firstIndex(where: { $0.id == activity.id }) {
+										viewModel.toggleFavourite(at: index)
+									}
 								}
 							}) {
 								Image(systemName: activity.favourite ? "heart.fill" : "heart")
