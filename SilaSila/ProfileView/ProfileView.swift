@@ -6,7 +6,6 @@ struct ProfileTabView: View {
 	@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 	@ObservedObject var viewModel: ProfileViewModel
 	@State private var pickerItem: PhotosPickerItem?
-	//@State private var selectedImage: Image?
 	
 	var body: some View {
 		NavigationStack {
@@ -32,14 +31,6 @@ struct ProfileTabView: View {
 				) {
 					if let selectedImage = viewModel.selectedImage {
 						selectedImage
-							.resizable()
-							.frame(width: 80, height: 80)
-							.clipShape(Circle())
-							.transition(.opacity.combined(with: .scale))
-					} else if let base64String = viewModel.profile.image,
-							  let data = Data(base64Encoded: base64String),
-							  let uiImage = UIImage(data: data) {
-						Image(uiImage: uiImage)
 							.resizable()
 							.frame(width: 80, height: 80)
 							.clipShape(Circle())

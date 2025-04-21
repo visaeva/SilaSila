@@ -19,10 +19,8 @@ class ProfileViewModel: ObservableObject {
 				phoneNumber: user.phoneNumber,
 				email: user.email
 			)
-			if let base64String = user.image,
-			   let data = Data(base64Encoded: base64String),
-			   let uiImage = UIImage(data: data) {
-				self.selectedImage = Image(uiImage: uiImage)
+			if let image = loadImageFromFile() {
+				self.selectedImage = image
 			}
 		} else {
 			self.profile = ProfileStruct(
@@ -37,21 +35,34 @@ class ProfileViewModel: ObservableObject {
 	}
 	func saveImage(_ image: UIImage) {
 		guard let data = image.jpegData(compressionQuality: 0.8) else { return }
-		let base64String = data.base64EncodedString()
-		if var user = registrationViewModel.loadUser() {
-			user.image = base64String
-			do {
+		let fileName = "avatar_\(UUID().uuidString).jpg"
+		let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(fileName)
+		
+		do {
+			if let oldFileName = profile.image {
+				let oldFileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(oldFileName)
+				try? FileManager.default.removeItem(at: oldFileURL)
+			}
+			try data.write(to: fileURL)
+			
+			if var user = registrationViewModel.loadUser() {
+				user.image = fileName
 				let encoded = try JSONEncoder().encode(user)
 				UserDefaults.standard.set(encoded, forKey: "registered_user")
-				profile.image = base64String
+				profile.image = fileName
 				selectedImage = Image(uiImage: image)
-			} catch {
-				
 			}
+		} catch {
+			print("Ошибка сохранения: \(error)")
 		}
 	}
 	
 	func deleteImage() {
+		if let fileName = profile.image {
+			let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(fileName)
+			try? FileManager.default.removeItem(at: fileURL)
+		}
+		
 		if var user = registrationViewModel.loadUser() {
 			user.image = nil
 			do {
@@ -60,9 +71,17 @@ class ProfileViewModel: ObservableObject {
 				profile.image = nil
 				selectedImage = nil
 			} catch {
-				
+				print("Ошибка удаления: \(error)")
 			}
 		}
+	}
+	
+	private func loadImageFromFile() -> Image? {
+		guard let fileName = profile.image,
+			  let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(fileName),
+			  FileManager.default.fileExists(atPath: fileURL.path),
+			  let uiImage = UIImage(contentsOfFile: fileURL.path) else { return nil }
+		return Image(uiImage: uiImage)
 	}
 }
 
