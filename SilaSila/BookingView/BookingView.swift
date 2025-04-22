@@ -27,18 +27,6 @@ struct BookingView: View {
 					}) {
 						fifthTab
 					}
-					
-					/*Button(action: {
-						viewModel.selection = 3
-					}) {
-						thirdTab
-					}
-					
-					Button(action: {
-						viewModel.selection = 4
-					}) {
-						fourthTab
-					}*/
 				}
 				.padding(.horizontal)
 				.padding(.bottom, -5)
@@ -152,42 +140,6 @@ struct BookingView: View {
 			
 			Text("УЧАСТНИКИ")
 				.foregroundColor(viewModel.selection == 1 ? .black : .gray)
-				.font(.system(size: 12, weight: .regular))
-				.lineLimit(1)
-		}
-	}
-	
-	private var thirdTab: some View {
-		HStack {
-			Circle()
-				.stroke(viewModel.selection == 3 ? Color.black : Color.gray, lineWidth: 1)
-				.background(Circle().fill(Color.white))
-				.overlay(
-					Text("4")
-						.foregroundColor(viewModel.selection == 3 ? .black : .gray)
-				)
-				.frame(width: 30, height: 30)
-			
-			Text("ОПЛАТА")
-				.foregroundColor(.gray)
-				.font(.system(size: 12, weight: .regular))
-				.lineLimit(1)
-		}
-	}
-	
-	private var fourthTab: some View {
-		HStack {
-			Circle()
-				.stroke(viewModel.selection == 4 ? Color.black : Color.gray, lineWidth: 1)
-				.background(Circle().fill(Color.white))
-				.overlay(
-					Text("5")
-						.foregroundColor(viewModel.selection == 4 ? .black : .gray)
-				)
-				.frame(width: 30, height: 30)
-			
-			Text("ЗАВЕРШЕНИЕ")
-				.foregroundColor(.gray)
 				.font(.system(size: 12, weight: .regular))
 				.lineLimit(1)
 		}
