@@ -9,7 +9,7 @@ struct ConfirmationView: View {
 	@Binding var participants: [Participant]
 	@Binding var selectedBase: String
 	@Binding var selectedBoat: String
-	@Binding var selectedDate: String
+	@Binding var selectedDate: Date
 	@Binding var selectedTime: String
 	@Environment(\.dismiss) var dismiss
 	private var isPayButtonEnabled: Bool {
@@ -232,9 +232,9 @@ struct ConfirmationView: View {
 	let participants = [
 		Participant(name: "Иван", lastName: "Иванов", phoneNumber: "+7 999 999 9999", email: "ivan@example.com", selectedExperience: "Нет опыта", selectedDate: Date())
 	]
-	return ConfirmationView(viewModel: viewModel, participants: .constant(participants),
-							selectedBase: .constant("Строгино"),
-							selectedBoat: .constant("SV20 (4 человека)"),
-							selectedDate: .constant("1 августа | Четверг"),
-							selectedTime: .constant("10:00"))
+	ConfirmationView(viewModel: viewModel, participants: .constant(participants),
+					 selectedBase: .constant("Строгино"),
+					 selectedBoat: .constant("SV20 (4 человека)"),
+					 selectedDate: .constant(Date()),
+					 selectedTime: .constant("10:00"))
 }

@@ -17,16 +17,18 @@ struct BookingView: View {
 						firstTab
 					}
 					Button(action: {
-						viewModel.selection = 1
-					}) {
-						secondTab
-					}
+						if viewModel.isFormValid {
+							viewModel.selection = 1
+						}}) {
+							secondTab
+						}
 					
 					Button(action: {
-						viewModel.selection = 2
-					}) {
-						fifthTab
-					}
+						if viewModel.isFormValid && !viewModel.participants.isEmpty {
+							viewModel.selection = 2
+						}}) {
+							thirdTab
+						}
 				}
 				.padding(.horizontal)
 				.padding(.bottom, -5)
@@ -37,6 +39,7 @@ struct BookingView: View {
 						selectedBase: $viewModel.selectedBase,
 						selectedBoat: $viewModel.selectedBoat,
 						selectedDate: $viewModel.selectedDate,
+						selectedDateString: $viewModel.selectedDateString,
 						selectedTime: $viewModel.selectedTime,
 						onNext: {
 							viewModel.selection = 1
@@ -47,20 +50,26 @@ struct BookingView: View {
 						times: viewModel.times
 					)
 				} else if viewModel.selection == 1 {
-					ParticipantsView(viewModel: participantsViewModel,
-									 onNext: {
-						viewModel.selection = 2 },
-									 participants: $viewModel.participants)
+					ParticipantsView(
+						viewModel: participantsViewModel,
+						onNext: {
+							viewModel.selection = 2
+						},
+						participants: $viewModel.participants
+					)
 				} else if viewModel.selection == 2 {
-					ConfirmationView(viewModel: confirmationViewModel,
-									 participants: $viewModel.participants,
-									 selectedBase: $viewModel.selectedBase,
-									 selectedBoat: $viewModel.selectedBoat,
-									 selectedDate: $viewModel.selectedDate,
-									 selectedTime: $viewModel.selectedTime)
+					ConfirmationView(
+						viewModel: confirmationViewModel,
+						participants: $viewModel.participants,
+						selectedBase: $viewModel.selectedBase,
+						selectedBoat: $viewModel.selectedBoat,
+						selectedDate: $viewModel.selectedDate,
+						selectedTime: $viewModel.selectedTime
+					)
 				}
 			}
 			.padding(.top, -15)
+			.animation(.easeInOut(duration: 0.3), value: viewModel.selection)
 			Spacer()
 		}
 		.toolbar {
@@ -145,7 +154,7 @@ struct BookingView: View {
 		}
 	}
 	
-	private var fifthTab: some View {
+	private var thirdTab: some View {
 		HStack {
 			Circle()
 				.stroke(viewModel.selection == 2 ? Color.black : Color.gray, lineWidth: 1)
