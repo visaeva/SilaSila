@@ -4,7 +4,9 @@
 ***SwiftUI***
 
 ## Скриншоты
-![Simulator Screenshot - iPhone 15 Pro - 2024-08-12 at 13 32 10](https://github.com/user-attachments/assets/cc5219d8-31ce-4953-b3db-e264f3d94318)
-![Simulator Screenshot - iPhone 15 Pro - 2024-10-03 at 14 41 50](https://github.com/user-attachments/assets/7527d2d1-71a5-4bc4-9493-b7543036113e)
-![Simulator Screenshot - iPhone 15 Pro - 2024-10-03 at 14 42 07](https://github.com/user-attachments/assets/62192e60-2d74-471e-aec6-79dad87c4562)
-![Simulator Screenshot - iPhone 15 Pro - 2024-10-03 at 15 44 01](https://github.com/user-attachments/assets/f3dc31d9-2d7c-4ba8-aca8-b6356dc038e6)
+
+| | | |
+|-|-|-|
+| ![Simulator Screenshot - IPhone 16 Pro - 2025-04-22 at 20 07 03](https://github.com/user-attachments/assets/dfb2d2e4-f0af-45c0-bf2f-c92576303194) | ![Simulator Screenshot - IPhone 16 Pro - 2025-04-22 at 20 10 30](https://github.com/user-attachments/assets/12b91893-e096-47cc-a1cf-1bf5e7269d81) | ![Simulator Screenshot - IPhone 16 Pro - 2025-04-22 at 20 14 40](https://github.com/user-attachments/assets/fce15355-2769-49c3-bdc2-c70bbf6523cd) |
+| ![Simulator Screenshot - IPhone 16 Pro - 2025-04-22 at 20 09 18](https://github.com/user-attachments/assets/f72f4b16-3af7-4775-a4ed-975dac0d325f) | ![Simulator Screenshot - IPhone 16 Pro - 2025-04-22 at 20 14 55](https://github.com/user-attachments/assets/7eb0d3fa-c185-41a7-80bd-ba1d783fa180) | ![Simulator Screenshot - IPhone 16 Pro - 2025-04-22 at 20 07 44](https://github.com/user-attachments/assets/066e225d-5711-4f05-9738-596af5f85d72) |
+| ![Simulator Screenshot - IPhone 16 Pro - 2025-04-22 at 20 07 19](https://github.com/user-attachments/assets/5ad82b3d-6875-4387-bb12-2fa841779495) | | |
